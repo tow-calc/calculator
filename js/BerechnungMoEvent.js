@@ -58,9 +58,9 @@ document.addEventListener('DOMContentLoaded', function () {
         ge10 = ge10.toFixed(0);
         ge11 = gewinnemo / 10;
         ge11 = ge11.toFixed(0);
-        ge12 = gewinnemo / 50;
+        ge12 = gewinnemo *5 / 50;
         ge12 = ge12.toFixed(0);
-        ge13 = gewinnemo / 100;
+        ge13 = gewinnemo *5 / 100;
         ge13 = ge13.toFixed(0);
 
 
