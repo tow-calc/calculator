@@ -1,0 +1,103 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+                }
+  
+#top {
+    text-align: center;
+}
+    
+#logo {
+    color:white;
+    background-color: red;
+    display: inline-block;
+    font-size: 32px;
+    font-weight: bold;
+    padding: 8px;
+    margin-top: 16px;
+    }
+
+#logo-name {
+        color:red;
+        font-size: 28px;
+        font-weight: bold;
+        margin: 8px;
+        }
+    
+#navigation a {
+color: gray;
+padding: 6px;
+}
+#navigation a:hover{
+    color:red;
+}
+#image img{
+    width: 80%;
+    margin-top: 16px;
+    margin-bottom: 16px;
+}
+#main{
+    max-width: 800px;
+    margin: auto;
+}
+
+#footer{
+    text-align: center;
+    color:grey;
+    margin: auto;
+}
+
+#mklasse3 {
+    color:blue
+}
+
+form {
+	border: thin solid #666;
+	width: auto;
+    padding: 1cm;
+    text-align: center;
+    background-color: lightgray;
+    }
+
+form1 {
+	border: thin solid #666;
+	width: 20em;
+    padding: 1em;
+    text-align: center;
+}
+
+legend {
+	font-size: 1.5em;
+    margin-bottom: 1em;
+    text-align: left;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+input[type=number] {
+    text-align: right;
+    margin: auto;
+    color: red;
+}
+
+label,
+span,
+output {
+	display: inline-block;
+    width: 11em;
+    text-align: right;
+}
+
+form p {
+	font-weight: bold;
+}
+
+output {
+	width: auto;
+    text-align: auto;
+    white-space: pre;
+}
+
+td {
+border: 1px solid black;
+
+}

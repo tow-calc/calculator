@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-78KHX6XF5R"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-78KHX6XF5R');
+    </script>
+
+
+
+    <title>Berechnung von TOW Event Inhalten</title>
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+</head>
+
+<body>
+    <div id="top">
+        <div id="logo">Tides of War Event Rechner</div>
+        <div id="logo-name">Erfahre, ob deine Ressourcen ausreichen, das aktuelle Event zuschaffen</div>
+        <div id="navigation">
+            <a href="#handel">Handelsschiff Event</a>
+            <a href="#bau">Bau Event</a>
+            <a href="#oiken">Oik Event</a>
+            <a href="#monster">Monster Event</a>
+            <a href="eingabe.php">Datenbank</a>
+            <a href="Disclaimer.html">Disclaimer/Impressum</a>
+            <br>
+            <br>
+
+            <h3 style="color: red;">NOTE: For my english speaking friends: the whole homepage can be translated under
+                google translator! Simply copy the link into the translator!</h3>
+            <a href="https://translate.google.com/?hl=de&tab=TT&authuser=0">click here</a>
+
+        </div>
+        <div id="image">
+            <img src="titelfoto.jpg" alt="Bild der Homepage">
+        </div>
+    </div>
+    <div id="main">
+        <section id="handel"></section>
+        <h2 style="color: red;">Handelsschiff Event</h2>
+
+        <p>Berechnung der benötigten Handelsschiffe:</p>
+        <p>Um dieses Event komplett zu schaffen, benötigst du 120.000 Punkte.</p>
+        <h5>Sollte ein Wert nicht benötigt werden, bitte eine "0" eintragen!!!</h5>
+
+        <main>
+            <form id="myForm">
+                <legend style="color: red;">Eingabe</legend>
+                <label for="hsmarken3">3. Klasse Marken:</label>
+                <input type="number" min="0" id="hsmarken3" value="0" step="100.0">
+                <br>
+                <br>
+                <label for="hsmarken2">2. Klasse Marken:</label>
+                <input type="number" min="0" id="hsmarken2" value="0" step="100.0">
+                <br>
+                <br>
+                <label for="hsmarken1">1. Klasse Marken:</label>
+                <input type="number" min="0" id="hsmarken1" value="0" step="100.0">
+                <br>
+                <br>
+                <label for="hsmarkensp">SP Klasse Marken:</label>
+                <input type="number" min="0" id="hsmarkensp" value="0" step="10.0">
+                <br>
+                <br>
+                <p style="margin: auto;">Gesamtpunkte:
+                    <output id="betrag" for="hsmarken3 hsmarken2 hsmarken1 hsmarkensp">0</output> / 120.000</p>
+                <p>benötigte Ausdauer:
+                    <output id="serien" for="hsmarken3 hsmarken2 hsmarken1 hsmarkensp">0</output> </p>
+
+                <p><span>Mögliche Gewinne:</span>
+                    <output style="color: red;" id="gewinn" for="..."></output> </p>
+
+                <output style="font-size:small;" id="gewinne"></output>
+
+                <br>
+                <br>
+
+                <button form="myForm" type="reset">Berechnung zurücksetzen</button>
+
+            </form>
+        </main>
+
+        <script src="js/BerechnungHsEvent.js"></script>
+        <br>
+        <br>
+        <br>
+
+        <section id="bau"></section>
+        <h2 style="color: red;">Bau Event / Gebäude Missionen</h2>
+
+        <p>Berechnung des erreichbaren Maximalwertes:</p>
+        <p>=> Um das Bau Event komplett zu schaffen, benötigst du 30.000.000 Punkte.</p>
+        <p>=> Berechnet werden können auch die Gebäude Missionen um herauszufinden, ob ein Ausbau zum erreichen der
+            dritten Belohnung reicht.</p>
+
+        <main>
+            <form id="myForm1">
+                <legend style="color: red;">Eingabe</legend>
+                <label for="bnahrung">Nahrung:</label>
+                <input type="number" min="0" id="bnahrung" value="0" step="1000000.0">
+                <br>
+                <br>
+                <label for="bholz">Holz:</label>
+                <input type="number" min="0" id="bholz" value="0" step="1000000.0">
+                <br>
+                <br>
+                <label for="bsilber">Silber:</label>
+                <input type="number" min="0" id="bsilber" value="0" step="1000000.0">
+                <br>
+                <br>
+                <label for="bspnahrung">SP Nahrung:</label>
+                <input type="number" min="0" id="bspnahrung" value="0" step="10.0">
+                <br>
+                <br> <label for="bspholz">SP Holz:</label>
+                <input type="number" min="0" id="bspholz" value="0" step="10.0">
+                <br>
+                <br>
+                <label for="bspsilber">SP Silber:</label>
+                <input type="number" min="0" id="bspsilber" value="0" step="10.0">
+                <p><span>Gesamtpunkte:</span>
+                    <output id="betrag1"
+                        for="bnahrung bholz bsilber bspnahrung bspholz bspsilber">0</output> /
+                    30.000.000</p>
+                <br>
+                <button form="myForm1" type="reset">Berechnung zurücksetzen</button>
+
+
+            </form>
+        </main>
+
+        <script src="js/BerechnungBauEvent.js"></script>
+        <script src="js/BauBelohnung.js"></script>
+
+        <br>
+        <br>
+        <section id="oiken"></section>
+        <h2 style="color: red;">Oik Event</h2>
+        <p>Berechnung des erreichbaren Maximalwertes:</p>
+        <p>=> Um das Oik Event komplett zu schaffen, benötigst du 325.500 Punkte.</p>
+
+        <main>
+            <form id="myForm2">
+                <legend style="color: red;">Eingabe</legend>
+                <label for="kbmarken3">3. Klasse Marken:</label>
+                <input type="number" min="0" id="kbmarken3" value="0" step="100.0">
+                <br>
+                <br>
+                <label for="kbmarken2">2. Klasse Marken:</label>
+                <input type="number" min="0" id="kbmarken2" value="0" step="100.0">
+                <br>
+                <br>
+                <label for="kbmarken1">1. Klasse Marken:</label>
+                <input type="number" min="0" id="kbmarken1" value="0" step="100.0">
+                <br>
+                <br>
+                <label for="kbmarkensp">SP Klasse Marken:</label>
+                <input type="number" min="0" id="kbmarkensp" value="0" step="10.0">
+                <br>
+                <br>
+                <p><span>Gesamtpunkte:</span>
+                    <output id="betrag2" for="kbmarken3 kbmarken2 kbmarken1 kbmarkensp">0</output> / 325.500</p>
+                <br>
+
+
+
+                <p><span>Mögliche Gewinne:</span>
+                    <output style="color: red;" id="gewinn" for="..."></output> </p>
+
+                <output style="font-size:small;" id="gewinneso"></output>
+
+
+                <br>
+                <button form="myForm2" type="reset">Berechnung zurücksetzen</button>
+
+            </form>
+        </main>
+
+        <script src="js/BerechnungOikEvent.js"></script>
+
+        <br>
+        <br>
+
+        <div id="main">
+            <section id="monster"></section>
+            <h2 style="color: red;">Monster Event</h2>
+
+            <p>Verschiedene Berechnungen zum Monsterevent:</p>
+            <p>Um dieses Event komplett zu schaffen, benötigst du 1.106.000 Punkte.</p>
+            <p>Achtung: Vorerst nur Berechnung Monster Level 30 - S6!</p>
+            <p style="color: red;">Daher bitte nur 30, S1=31, S2=32, s3=33, S4=34, S5=35 und S6=36 eintragen!</p>
+
+            <main>
+                <form id="myForm3">
+                    <legend style="color: red;">Eingabe</legend>
+                    <label for="moStufe3">Ich fahre Monster Level:</label>
+                    <input type="number" min="30" max="36" id="moStufe3" value="30" step="1.0">
+                    <br>
+                    <br>
+                    <p style="margin: auto;">Bei Monster Level:
+                        <output id="betragmo" for="moStufe3">0</output></p>
+                    <p>Benötigst du:
+                        <output id="gewinne3"> 0</output> Monster
+                        <br>
+                    <p>zusätzlich:
+                        <output id="gewinne31"> 0</output> x 5er Jadgserien </p>
+                    <p>oder:
+                        <output id="gewinne32"> 0</output> x 10er Jadgserien </p>
+                    <p>zusätzlich:
+                        <output id="gewinne33"> 0</output> x 50er Ausdauer </p>
+                    <p>oder:
+                        <output id="gewinne34"> 0</output> x 100er Ausdauer </p>
+
+
+
+
+                    <br>
+                    <br>
+
+                    <button form="myForm3" type="reset">Berechnung zurücksetzen</button>
+
+                </form>
+            </main>
+
+            <script src="js/BerechnungMoEvent.js"></script>
+            <br>
+            <br>
+            <br>
+
+
+
+        </div>
+        <div id="footer">
+            <br>
+            copyright 2020 by Gregor Knapp // Version 1.114 Neu: MonsterEvent hinzugefügt
+            <p>Version 1.113: Handelsschiff Gewinne hinzugefügt</p>
+            <p>Version 1.112: OikEvent hinzugefügt</p>
+
+        </div>
+
+</body>
+
+</html>
