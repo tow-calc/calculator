@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', function () {
         var ge39 = "200 x Premium Schiffsbauplan";
 
 
-        summe = summe.toFixed(0);
+        summe = summe.toLocaleString();
         document.getElementById('betrag2').value = summe;
 
         if (summe < 750) {

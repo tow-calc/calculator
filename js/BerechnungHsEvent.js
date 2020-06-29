@@ -50,6 +50,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         summe = summe.toLocaleString();
         document.getElementById('betrag').value = summe;
+        serienerg = serienerg.toLocaleString();
         document.getElementById("serien").value = serienerg;
 
         if (summe < 300) {
