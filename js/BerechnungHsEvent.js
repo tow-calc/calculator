@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
-        summe = summe.toLocaleString();
+        summe = summe.toLocaleString('de-DE');
         document.getElementById('betrag').value = summe;
         serienerg = serienerg.toLocaleString();
         document.getElementById("serien").value = serienerg;
