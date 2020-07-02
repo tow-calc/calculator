@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function () {
         if (summe <= 28) {
             gewinnemo = ge1;
         }
-        if (summe >= 29) {
+        if (summe = 29) {
             gewinnemo = ge29;
         }
         if (summe == 30) {
