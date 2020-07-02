@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', function () {
         var moStufe3 = document.getElementById('moStufe3');
         var summe = moStufe3.valueAsNumber * 1;
         var ge1 = "Bitte Level 30-36 eintragen!";
+        var ge29 = 1106000 / 144;
         var ge2 = 1106000 / 158;
         var ge3 = 1106000 / 190;
         var ge4 = 1106000 / 228;
@@ -20,11 +21,15 @@ document.addEventListener('DOMContentLoaded', function () {
         ge6 = ge6.toFixed(0);
         ge7 = ge7.toFixed(0);
         ge8 = ge8.toFixed(0);
+        ge29 = ge29.toFixed(0);
 
         document.getElementById('betragmo').value = summe;
 
-        if (summe <= 29) {
+        if (summe <= 28) {
             gewinnemo = ge1;
+        }
+        if (summe >= 29) {
+            gewinnemo = ge29;
         }
         if (summe == 30) {
             gewinnemo = ge2;
