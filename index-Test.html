@@ -233,18 +233,85 @@
             <script src="js/BerechnungMoEvent.js"></script>
             <br>
             <br>
-            <p>Ich habe eine Bitte: sollte ein Fehler auftauchen, nicht böse sein. Dies soll vielleicht so sein ;-)</p>
+            <div id="main">
+                <section id="monster"></section>
+                <h2 style="color: red;">Berechnung Stufenaufstieg Gebäude</h2>
 
-        </div>
-        <div id="footer">
-            <br>
-            copyright 2020 by Gregor Knapp // 1.121 Korrektur Berechnungen
-            <p>1.12 Umzug auf github</p>
-            <p>Version 1.114 Neu: MonsterEvent hinzugefügt</p>
-            <p>Version 1.113: Handelsschiff Gewinne hinzugefügt</p>
-            <p>Version 1.112: OikEvent hinzugefügt</p>
+                <p>Hier berechnen wir mal, wieviel Resourcen für den nächsten Stufenaufstieg benötigt werden...</p>
+                <p>Wenn keine Spezialresourcen benötigt werden, bitte eine "0" eintragen</p>
 
-        </div>
+                <main>
+                    <form id="myForm4">
+                        <legend style="color: red;">Eingabe</legend>
+
+                        <label for="ausbauStufeAktuell">Aktuelle Stufe:</label>
+                        <input type="number" min="0" max="6" id="ausbauStufeAktuell" value="0" step="1.0">
+                        <br>
+                        <br>
+                        <label for="ausbauStufeMax">Max Ausbau Stufe:</label>
+                        <input type="number" min="0" max="6" id="ausbauStufeMax" value="0" step="1.0">
+                        <br>
+                        <br>
+                        <label for="ausbauNahrung">Nahrung:</label>
+                        <input type="number" min="0" id="ausbauNahrung" value="0" step="1000000.0">
+                        <br>
+                        <br>
+                        <label for="ausbauHolz">Holz:</label>
+                        <input type="number" min="0" id="ausbauHolz" value="0" step="1000000.0">
+                        <br>
+                        <br>
+                        <label for="ausbauSilber">Silber:</label>
+                        <input type="number" min="0" id="ausbauSilber" value="0" step="1000000.0">
+                        <br>
+                        <br>
+                        <label for="ausbauSpNahrung">SP Nahrung:</label>
+                        <input type="number" min="0" id="ausbauSpNahrung" value="0" step="10.0">
+                        <br>
+                        <br> <label for="ausbauSpHolz">SP Holz:</label>
+                        <input type="number" min="0" id="ausbauSpHolz" value="0" step="10.0">
+                        <br>
+                        <br>
+                        <label for="ausbauSpSilber">SP Silber:</label>
+                        <input type="number" min="0" id="ausbauSpSilber" value="0" step="10.0">
+                        </p>
+                        <p style="margin: auto;">Für den kompletten Ausbau benötigst du ETWA:</p>
+                        <p>Nahrung:
+                            <output id="ausbauStufeErgebnisNahrung"> 0</output>
+                            <br>
+                        <p>Holz:
+                            <output id="gewinne31"> 0</output></p>
+                        <p>Silber:
+                            <output id="gewinne32"> 0</output></p>
+                        <p>SP Nahrung:
+                            <output id="gewinne33"> 0</output></p>
+                        <p>SP Holz:
+                            <output id="gewinne34"> 0</output></p>
+                        <p>SP Silber:
+                            <output id="gewinne34"> 0</output></p>
+                        <br>
+
+                        <button form="myForm4" type="reset">Berechnung zurücksetzen</button>
+
+                    </form>
+                </main>
+
+                <script src="js/BerechnungAusbau.js"></script>
+                <br>
+
+                <br>
+                <p>Ich habe eine Bitte: sollte ein Fehler auftauchen, nicht böse sein. Dies soll vielleicht so sein ;-)
+                </p>
+
+            </div>
+            <div id="footer">
+                <br>
+                copyright 2020 by Gregor Knapp // 1.121 Korrektur Berechnungen
+                <p>1.12 Umzug auf github</p>
+                <p>Version 1.114 Neu: MonsterEvent hinzugefügt</p>
+                <p>Version 1.113: Handelsschiff Gewinne hinzugefügt</p>
+                <p>Version 1.112: OikEvent hinzugefügt</p>
+
+            </div>
 
 </body>
 
