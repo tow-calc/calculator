@@ -1,11 +1,19 @@
 document.addEventListener('DOMContentLoaded', function () {
     function rechne() {
-        var hsmarken3 = document.getElementById('hsmarken3'),
-            hsmarken2 = document.getElementById('hsmarken2'),
-            hsmarken1 = document.getElementById('hsmarken1');
-        hsmarkensp = document.getElementById('hsmarkensp');
+        var hsmarken3 = document.getElementById('hsmarken3');
+        var hsmarken2 = document.getElementById('hsmarken2');
+        var hsmarken1 = document.getElementById('hsmarken1');
+        var hsmarkensp = document.getElementById('hsmarkensp');
         var summe = hsmarken3.valueAsNumber * 20 + hsmarken2.valueAsNumber * 60 + hsmarken1.valueAsNumber * 150 + hsmarkensp.valueAsNumber * 375;
         var serienerg = hsmarken3.valueAsNumber * 5 + hsmarken2.valueAsNumber * 5 + hsmarken1.valueAsNumber * 5 + hsmarkensp.valueAsNumber * 5;
+        var ge101 = hsmarken3.valueAsNumber / 5 + hsmarken2.valueAsNumber / 5 + hsmarken1.valueAsNumber / 5 + hsmarkensp.valueAsNumber / 5;
+        var ge111 = hsmarken3.valueAsNumber / 10 + hsmarken2.valueAsNumber / 10 + hsmarken1.valueAsNumber / 10 + hsmarkensp.valueAsNumber / 10;
+        var ge202 = hsmarken3.valueAsNumber *5 / 50 + hsmarken2.valueAsNumber*5 / 50 + hsmarken1.valueAsNumber *5 / 50 + hsmarkensp.valueAsNumber *5 / 50;
+        var ge222 = hsmarken3.valueAsNumber *5 / 100 + hsmarken2.valueAsNumber *5 / 100 + hsmarken1.valueAsNumber *5 / 100 + hsmarkensp.valueAsNumber *5 / 100;
+
+
+
+
         var ge1 = "10 h Baubeschleuniger";
         var ge2 = "10 h Forschungsbeschleuniger";
         var ge3 = "20 h Forschungsbeschleunigung";
@@ -52,6 +60,17 @@ document.addEventListener('DOMContentLoaded', function () {
         document.getElementById('betrag').value = summe;
         serienerg = serienerg.toLocaleString();
         document.getElementById("serien").value = serienerg;
+        ge101 = ge101.toFixed(0);
+        document.getElementById("gewinnesujagd5").value = ge101;
+        ge111 = ge111.toFixed(0);
+        document.getElementById("gewinnesujagd10").value = ge111;
+        ge202 = ge202.toFixed(0);
+        document.getElementById("gewinnesuAusd50").value = ge202;
+        ge222 = ge222.toFixed(0);
+        document.getElementById("gewinnesuAusd100").value = ge222;
+
+
+
 
         if (summe < 300) {
             gewinnesu = "nichts";
@@ -247,13 +266,9 @@ document.addEventListener('DOMContentLoaded', function () {
                 + "\n" + ge14 + "\n" + ge15 + "\n" + ge16 + "\n" + ge17 + "\n" + ge18 + "\n" + ge19 + "\n" + ge20 + "\n" + ge21 + "\n" + ge22 + "\n" + ge23 + "\n" + ge24 + "\n" + ge25
                 + "\n" + ge26 + "\n" + ge27 + "\n" + ge28 + "\n" + ge29 + "\n" + ge30 + "\n" + ge31 + "\n" + ge32 + "\n" + ge33 + "\n" + ge34 + "\n" + ge35 + "\n" + ge36 + "\n" + ge37 + "\n" + ge38 + "\n" + ge39;
         }
-
-
-
-
-
-
         document.getElementById("gewinne").value = gewinnesu;
+
+
 
     }
     document.getElementById("myForm").addEventListener("input", rechne);

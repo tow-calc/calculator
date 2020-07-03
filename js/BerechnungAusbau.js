@@ -15,32 +15,37 @@ document.addEventListener('DOMContentLoaded', function () {
         var stufenUnterschied = ausbauStufeMax.valueAsNumber - ausbauStufeAktuell.valueAsNumber;
 
         var teil1 = ausbauNahrung.valueAsNumber;
-        var teil2 = teil1 + teil1 * 1.05;
+        var teil1a = ausbauNahrung.valueAsNumber*1.05;
+        var teil2 = teil1a * 1.05 + teil1a + teil1;
         var teil3 = teil1 + teil2 + teil2 * 1.05;
         var teil4 = teil1 + teil2 +teil3* 1.05;
         var teil5 = teil4 + ausbauNahrung.valueAsNumber * 1.05;
         var teil6 = teil5 + ausbauNahrung.valueAsNumber * 1.05;
 
 
-
-        if (stufenUnterschied == 1) {
+        if (stufenUnterschied == 0) {
             summe2 = teil1;
         }
-        if (stufenUnterschied == 2) {
+        else if (stufenUnterschied == 1) {
+            summe2 = teil1*1.05 + teil1;
+        }
+        else if (stufenUnterschied == 2) {
             summe2 = teil2;
         }
-        if (stufenUnterschied == 3) {
+        else if (stufenUnterschied == 3) {
             summe2 = teil3;
         }
-        if (stufenUnterschied == 4) {
+        else if (stufenUnterschied == 4) {
             summe2 = teil4;
         }
-        if (stufenUnterschied == 5) {
+        else if (stufenUnterschied == 5) {
             summe2 = teil5;
         }
-        if (stufenUnterschied == 6) {
+        else if (stufenUnterschied == 6) {
             summe2 = teil6;
         }
+else {"Da ging was schief!"}
+
 
         summe2 = summe2.toLocaleString();
 

@@ -2,9 +2,9 @@
 <html lang="en">
 
 <head>
-<link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css">
 
-<h1>TOW Datenbank</h1>
+    <h1>TOW Datenbank</h1>
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -25,33 +25,87 @@
         <br>
         <br>
         <label for="schiff1">Schiff 1</label><br />
-        <input name="schiff1" type="text" /> <br />
+        <select name="schiff1">
+            <option value=""> Schiff 1 Auswahl </option>
+            <option value="Roter Drache"> Roter Drache </option>
+            <option value="Blaue Sirene"> Blaue Sirene </option>
+            <option value="Sturmreiter"> Sturmreiter </option>
+            <option value="Neptuns Ruhm"> Neptuns Ruhm </option>
+            <option value="Gewaltige Galeone"> Gewaltige Galeone </option>
+            <option value="Kriegsgaleone"> Kriegsgaleone </option>
+            <option value="Superfregatte"> Superfregatte </option>
+        </select>
         <br>
         <br>
         <label for="schiff2">Schiff 2</label><br />
-        <input name="schiff2" type="text" /> <br />
+        <select name="schiff2">
+            <option value=""> Schiff 2 Auswahl </option>
+            <option value="Roter Drache"> Roter Drache </option>
+            <option value="Blaue Sirene"> Blaue Sirene </option>
+            <option value="Sturmreiter"> Sturmreiter </option>
+            <option value="Neptuns Ruhm"> Neptuns Ruhm </option>
+            <option value="Gewaltige Galeone"> Gewaltige Galeone </option>
+            <option value="Kriegsgaleone"> Kriegsgaleone </option>
+            <option value="Superfregatte"> Superfregatte </option>
+        </select>
         <br>
         <br>
         <label for="schiff3">Schiff 3</label><br />
-        <input name="schiff3" type="text" /> <br />
+        <select name="schiff3">
+            <option value=""> Schiff 3 Auswahl </option>
+            <option value="Roter Drache"> Roter Drache </option>
+            <option value="Blaue Sirene"> Blaue Sirene </option>
+            <option value="Sturmreiter"> Sturmreiter </option>
+            <option value="Neptuns Ruhm"> Neptuns Ruhm </option>
+            <option value="Gewaltige Galeone"> Gewaltige Galeone </option>
+            <option value="Kriegsgaleone"> Kriegsgaleone </option>
+            <option value="Superfregatte"> Superfregatte </option>
+        </select>
         <br>
         <br>
         <label for="schiff4">Schiff 4</label><br />
-        <input name="schiff4" type="text" /> <br />
+        <select name="schiff4">
+            <option value=""> Schiff 4 Auswahl </option>
+            <option value="Roter Drache"> Roter Drache </option>
+            <option value="Blaue Sirene"> Blaue Sirene </option>
+            <option value="Sturmreiter"> Sturmreiter </option>
+            <option value="Neptuns Ruhm"> Neptuns Ruhm </option>
+            <option value="Gewaltige Galeone"> Gewaltige Galeone </option>
+            <option value="Kriegsgaleone"> Kriegsgaleone </option>
+            <option value="Superfregatte"> Superfregatte </option>
+        </select>
         <br>
         <br>
         <label for="schiff5">Schiff 5</label><br />
-        <input name="schiff5" type="text" /> <br />
+        <select name="schiff5">
+            <option value=""> Schiff 5 Auswahl </option>
+            <option value="Roter Drache"> Roter Drache </option>
+            <option value="Blaue Sirene"> Blaue Sirene </option>
+            <option value="Sturmreiter"> Sturmreiter </option>
+            <option value="Neptuns Ruhm"> Neptuns Ruhm </option>
+            <option value="Gewaltige Galeone"> Gewaltige Galeone </option>
+            <option value="Kriegsgaleone"> Kriegsgaleone </option>
+            <option value="Superfregatte"> Superfregatte </option>
+        </select>
         <br>
-        <br>   
+        <br>
         <label for="parker">Parker</label><br />
-        <input name="parker" type="text" /> <br />
+        <select name="parker">
+            <option value=""> Parker Dunkel vorhanden? </option>
+            <option value="ja"> Ja </option>
+            <option value="nein"> Nein </option>
+        </select>
+
         <br>
-        <br>   
+        <br>
         <label for="perez">Perez</label><br />
-        <input name="perez" type="text" /> <br />
+        <select name="perez">
+            <option value=""> Perez Dunkel vorhanden? </option>
+            <option value="ja"> Ja </option>
+            <option value="nein"> Nein </option>
+        </select>
         <br>
-        <br>   
+        <br>
 
         <button type="submit" name="speichern" value="speichern">SPEICHERN!</button>
     </form>
@@ -116,28 +170,28 @@
 
     require('connectBD.php');
 
-$db_res = runSQL("Select Name, Alianz, Macht, Schiff1, Schiff2, Schiff3, Schiff4, Schiff5, Parker, Perez, Datum FROM TOW");
+    $db_res = runSQL("Select Name, Alianz, Macht, Schiff1, Schiff2, Schiff3, Schiff4, Schiff5, Parker, Perez, Datum FROM TOW");
 
 
-echo ('<table>');
-while ($row = mysqli_fetch_array($db_res)) {
-    echo ('<tr>');
-    echo ('<td>' . $row['Name'] . '</td>');
-    echo ('<td>' . $row['Alianz'] . '</td>');
-    echo ('<td>' . $row['Macht'] . '</td>');
-    echo ('<td>' . $row['Schiff1'] . '</td>');
-    echo ('<td>' . $row['Schiff2'] . '</td>');
-    echo ('<td>' . $row['Schiff3'] . '</td>');
-    echo ('<td>' . $row['Schiff4'] . '</td>');
-    echo ('<td>' . $row['Schiff5'] . '</td>');
-    echo ('<td>' . $row['Parker'] . '</td>');
-    echo ('<td>' . $row['Perez'] . '</td>');
-    echo ('<td>' . $row['Datum'] . '</td>');
+    echo ('<table>');
+    while ($row = mysqli_fetch_array($db_res)) {
+        echo ('<tr>');
+        echo ('<td>' . $row['Name'] . '</td>');
+        echo ('<td>' . $row['Alianz'] . '</td>');
+        echo ('<td>' . $row['Macht'] . '</td>');
+        echo ('<td>' . $row['Schiff1'] . '</td>');
+        echo ('<td>' . $row['Schiff2'] . '</td>');
+        echo ('<td>' . $row['Schiff3'] . '</td>');
+        echo ('<td>' . $row['Schiff4'] . '</td>');
+        echo ('<td>' . $row['Schiff5'] . '</td>');
+        echo ('<td>' . $row['Parker'] . '</td>');
+        echo ('<td>' . $row['Perez'] . '</td>');
+        echo ('<td>' . $row['Datum'] . '</td>');
 
 
-    echo ('</tr>');
-}
-echo ('</table>');
+        echo ('</tr>');
+    }
+    echo ('</table>');
 
 
     ?>
