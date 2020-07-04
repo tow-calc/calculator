@@ -18,7 +18,12 @@
         <input name="name" type="text" /> <br />
         <br>
         <label for="alianz">Allianz</label><br />
-        <input name="alianz" type="text" /> <br />
+        <select name="alianz">
+            <option value=""> Allianz Auswahl </option>
+            <option value="IRT"> IRT </option>
+            <option value="WRG"> WRG </option>
+            <option value="bFC"> bFC </option>
+        </select>
         <br>
         <label for="macht">Macht</label><br />
         <input name="macht" type="text" /> <br />
