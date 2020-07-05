@@ -27,7 +27,8 @@
             <a href="#bau">Bau Event</a>
             <a href="#oiken">Oik Event</a>
             <a href="#monster">Monster Event</a>
-            <a href="datenbank/inssert.php">Datenbank</a>
+            <a href="#forschen">Forschungs Event</a>
+            <!--      <a href="datenbank/insert.php">Datenbank</a> -->
             <a href="Disclaimer.html">Disclaimer/Impressum</a>
             <br>
             <br>
@@ -211,12 +212,47 @@
             <script src="js/BerechnungMoEvent.js"></script>
             <br>
             <br>
+            <section id="forschen"></section>
+            <h2 style="color: red;">Forschungs Event</h2>
+            <p>Berechnung des erreichbaren Maximalwertes:</p>
+            <p>=> Um das Forschungs Event komplett zu schaffen, benötigst du 6.500.000 Punkte.</p>
+            <p style="color: red;">Achtung! Diese Berechnung gibt nur an, wieviele Punkte man MAX erhalten kann! Es ist nicht berücksichtigt, ob alle Resourcen auch tatsächlich benutzt werden können!</p>
+            <main>
+                <form id="myForm4">
+                    <legend style="color: red;">Eingabe</legend>
+                    <label for="forschNahrung">Nahrung:</label>
+                    <input type="number" min="0" id="forschNahrung" value="0" step="1000000.0">
+                    <br>
+                    <br>
+                    <label for="forschHolz">Holz:</label>
+                    <input type="number" min="0" id="forschHolz" value="0" step="1000000.0">
+                    <br>
+                    <br>
+                    <label for="forschSilber">Silber:</label>
+                    <input type="number" min="0" id="forschSilber" value="0" step="1000000.0">
+                    <br>
+                    <br>
+                    <label for="forschBlutm">Blutige Münzen:</label>
+                    <input type="number" min="0" id="forschBlutm" value="0" step="1000.0">
+                    <br>
+                    <br>
+                    <p><span>Gesamtpunkte:</span>
+                        <output id="forschErg" for="forschNahrung forschHolz forschSilber forschBlutm">0</output> / 6.500.000</p>
+                    <br>  
+                    <br>
+                    <button form="myForm4" type="reset">Berechnung zurücksetzen</button>
+                </form>
+            </main>
+            <script src="js/BerechnungForschEvent.js"></script>
+            <br>
+            <br>
             <p>Ich habe eine Bitte: sollte ein Fehler auftauchen, nicht böse sein. Dies soll vielleicht so sein ;-)</p>
 
         </div>
         <div id="footer">
             <br>
-            copyright 2020 by Gregor Knapp // 1.122 Handelsschiff Event zusätzliche Infos eingefügt + Code ausmisten
+            copyright 2020 by Gregor Knapp // 1.124 Forschungsevent eingefügt
+            <p>1.122 Handelsschiff Event zusätzliche Infos eingefügt + Code ausmisten</p>
             <p>1.121 Korrektur Berechnungen</p>
             <p>1.12 Umzug auf github</p>
             <p>Version 1.114 Neu: MonsterEvent hinzugefügt</p>
