@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-78KHX6XF5R"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-78KHX6XF5R');
+    </script>
+    <title>Berechnung von TOW Event Inhalten</title>
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+</head>
+
+<body>
+    <div id="top">
+        <div id="logo">Tides of War Event Rechner</div>
+        <div id="logo-name">Erfahre, ob deine Ressourcen ausreichen, das aktuelle Event zuschaffen</div>
+        <div id="navigation">
+            <a href="#handel">Handelsschiff Event</a>
+            <a href="#bau">Bau Event</a>
+            <a href="#oiken">Oik Event</a>
+            <a href="#monster">Monster Event</a>
+            <a href="#forschen">Forschungs Event</a>
+            <!--      <a href="datenbank/insert.php">Datenbank</a> -->
+            <a href="Disclaimer.html">Disclaimer/Impressum</a>
+            <br>
+            <br>
+            <h3 style="color: red;">NOTE: For my english speaking friends: the whole homepage can be translated under
+                google translator! Simply copy the link into the translator!</h3>
+            <a href="https://translate.google.com/?hl=de&tab=TT&authuser=0">click here</a>
+        </div>
+        <div id="image">
+            <img src="titelfoto.jpg" alt="Bild der Homepage">
+        </div>
+    </div>
+    <div id="main">
+        <section id="handel"></section>
+        <h2 style="color: red;">Handelsschiff Event</h2>
+        <p>Berechnung der benötigten Handelsschiffe:</p>
+        <p>Um dieses Event komplett zu schaffen, benötigst du 120.000 Punkte.</p>
+        <h5>Sollte ein Wert nicht benötigt werden, bitte eine "0" eintragen!!!</h5>
+        <main>
+            <form id="myForm">
+                <legend style="color: red;">Eingabe aller Daten in einer Maske!</legend>
+                <label for="hsmarken3">3. Klasse Marken:</label>
+                <input type="number" min="0" id="hsmarken3" value="0" step="100.0">
+                <br>
+                <br>
+                <label for="hsmarken2">2. Klasse Marken:</label>
+                <input type="number" min="0" id="hsmarken2" value="0" step="100.0">
+                <br>
+                <br>
+                <label for="hsmarken1">1. Klasse Marken:</label>
+                <input type="number" min="0" id="hsmarken1" value="0" step="100.0">
+                <br>
+                <br>
+                <label for="hsmarkensp">SP Klasse Marken:</label>
+                <input type="number" min="0" id="hsmarkensp" value="0" step="10.0">
+                <br>
+                <br>
+                <p style="margin: auto;">Gesamtpunkte:
+                    <output id="betrag" for="hsmarken3 hsmarken2 hsmarken1 hsmarkensp">0</output> / 120.000</p>
+                <p>benötigte Ausdauer:
+                    <output id="serien" for="hsmarken3 hsmarken2 hsmarken1 hsmarkensp">0</output> </p>
+                <p>zusätzlich:
+                    <output id="gewinnesujagd5"> 0</output> x 5er Jadgserien </p>
+                <p>oder:
+                    <output id="gewinnesujagd10"> 0</output> x 10er Jadgserien </p>
+                <p>zusätzlich:
+                    <output id="gewinnesuAusd50"> 0</output> x 50er Ausdauer </p>
+                <p>oder:
+                    <output id="gewinnesuAusd100"> 0</output> x 100er Ausdauer </p>
+
+                <!--              <p><span>Mögliche Gewinne:</span>
+                    <output style="color: red;" id="gewinn" for="..."></output> </p>
+
+                <output style="font-size:small;" id="gewinne"></output> -->
+
+                <br>
+                <br>
+                <button form="myForm" type="reset">Berechnung zurücksetzen</button>
+            </form>
+        </main>
+        <script src="js/BerechnungHsEvent.js"></script>
+        </div>
+        <div id="footer">
+            <br>
+            copyright 2020 by Gregor Knapp // 1.124 Forschungsevent eingefügt
+            <p>1.122 Handelsschiff Event zusätzliche Infos eingefügt + Code ausmisten</p>
+            <p>1.121 Korrektur Berechnungen</p>
+            <p>1.12 Umzug auf github</p>
+            <p>Version 1.114 Neu: MonsterEvent hinzugefügt</p>
+            <p>Version 1.113: Handelsschiff Gewinne hinzugefügt</p>
+            <p>Version 1.112: OikEvent hinzugefügt</p>
+        </div>
+</body>
+</html>

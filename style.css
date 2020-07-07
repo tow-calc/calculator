@@ -56,7 +56,17 @@ form {
     padding: 1cm;
     text-align: center;
     background-color: lightgray;
-    }
+   }
+
+
+form {
+        border: thin solid #159;
+        width: auto;
+        padding: 1cm;
+        text-align: center;
+        background-color: lightgray;
+        }
+    
 
 form1 {
 	border: thin solid #666;

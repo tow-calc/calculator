@@ -18,6 +18,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
 </head>
+
 <body>
     <div id="top">
         <div id="logo">Tides of War Event Rechner</div>
@@ -216,7 +217,8 @@
             <h2 style="color: red;">Forschungs Event</h2>
             <p>Berechnung des erreichbaren Maximalwertes:</p>
             <p>=> Um das Forschungs Event komplett zu schaffen, benötigst du 6.500.000 Punkte.</p>
-            <p style="color: red;">Achtung! Diese Berechnung gibt nur an, wieviele Punkte man MAX erhalten kann! Es ist nicht berücksichtigt, ob alle Resourcen auch tatsächlich benutzt werden können!</p>
+            <p style="color: red;">Achtung! Diese Berechnung gibt nur an, wieviele Punkte man MAX erhalten kann! Es ist
+                nicht berücksichtigt, ob alle Resourcen auch tatsächlich benutzt werden können!</p>
             <main>
                 <form id="myForm4">
                     <legend style="color: red;">Eingabe</legend>
@@ -237,8 +239,9 @@
                     <br>
                     <br>
                     <p><span>Gesamtpunkte:</span>
-                        <output id="forschErg" for="forschNahrung forschHolz forschSilber forschBlutm">0</output> / 6.500.000</p>
-                    <br>  
+                        <output id="forschErg" for="forschNahrung forschHolz forschSilber forschBlutm">0</output> /
+                        6.500.000</p>
+                    <br>
                     <br>
                     <button form="myForm4" type="reset">Berechnung zurücksetzen</button>
                 </form>
@@ -246,9 +249,17 @@
             <script src="js/BerechnungForschEvent.js"></script>
             <br>
             <br>
+            <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                <p>Captain, alles hier ist und bleibt kostenlos! Falls du am Monatsende nen Euro übrig haben solltest, würde ich davon die Serverkosten bezahlen :-)</p>
+                <input type="hidden" name="cmd" value="_s-xclick" />
+                <input type="hidden" name="hosted_button_id" value="EP8E3LLY6AQWC" />
+                <input type="image" src="https://www.paypalobjects.com/en_US/DK/i/btn/btn_donateCC_LG.gif" border="0"
+                    name="submit" title="PayPal - The safer, easier way to pay online!"
+                    alt="Donate with PayPal button" />
+                <img alt="" border="0" src="https://www.paypal.com/en_DE/i/scr/pixel.gif" width="1" height="1" />
+            </form>
             <p>Ich habe eine Bitte: sollte ein Fehler auftauchen, nicht böse sein. Dies soll vielleicht so sein ;-)</p>
-
-     <!--       <script>
+            <!--       <script>
                 var div = document.createElement('div');
                 div.className = 'fb-customerchat';
                 div.setAttribute('page_id', '104773481294613');
@@ -279,7 +290,6 @@
                   }(document, 'script', 'facebook-jssdk'));
                 }, 0);
               </script> -->
-
         </div>
         <div id="footer">
             <br>
@@ -290,9 +300,6 @@
             <p>Version 1.114 Neu: MonsterEvent hinzugefügt</p>
             <p>Version 1.113: Handelsschiff Gewinne hinzugefügt</p>
             <p>Version 1.112: OikEvent hinzugefügt</p>
-
         </div>
-
 </body>
-
 </html>
