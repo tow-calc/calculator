@@ -2,9 +2,9 @@
 <html lang="en">
 
 <head>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/style.css">
 
-    <h1>TOW Datenbank</h1>
+    <h1 style="text-align: center; color: red;">TOW Datenbank</h1>
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -115,92 +115,117 @@
         <button type="submit" name="speichern" value="speichern">SPEICHERN!</button>
     </form>
 
-    <?php
+    <br>
+    <br>
 
-    if (isset($_POST['speichern'])) {
+    <form>
 
-        require('Include/db_connect.php');
+   
 
+        <?php
 
-        $name = $_POST['name'];
-        $alianz = $_POST['alianz'];
-        $macht = $_POST['macht'];
-        $schiff1 = $_POST['schiff1'];
-        $schiff2 = $_POST['schiff2'];
-        $schiff3 = $_POST['schiff3'];
-        $schiff4 = $_POST['schiff4'];
-        $schiff5 = $_POST['schiff5'];
-        $parker = $_POST['parker'];
-        $perez = $_POST['perez'];
+        if (isset($_POST['speichern'])) {
+
+            require('Include/db_connect.php');
 
 
-        echo "eingetragener Name: " . $name;
-        echo "<br>";
-        echo "eingetragene Allianz: " . $alianz;
-        echo "<br>";
-        echo "eingetragene Macht: " . $macht;
-        echo "<br>";
-        echo "eingetragenes Schiff 1: " . $schiff1;
-        echo "<br>";
-        echo "eingetragenes Schiff 2: " . $schiff2;
-        echo "<br>";
-        echo "eingetragenes Schiff 3: " . $schiff3;
-        echo "<br>";
-        echo "eingetragenes Schiff 4: " . $schiff4;
-        echo "<br>";
-        echo "eingetragenes Schiff 5: " . $schiff5;
-        echo "<br>";
-        echo "eingetragener Taktiker: " . $parker;
-        echo "<br>";
-        echo "eingetragener Taktiker: " . $perez;
+            $name = $_POST['name'];
+            $alianz = $_POST['alianz'];
+            $macht = $_POST['macht'];
+            $schiff1 = $_POST['schiff1'];
+            $schiff2 = $_POST['schiff2'];
+            $schiff3 = $_POST['schiff3'];
+            $schiff4 = $_POST['schiff4'];
+            $schiff5 = $_POST['schiff5'];
+            $parker = $_POST['parker'];
+            $perez = $_POST['perez'];
+
+
+            echo "eingetragener Name: " . $name;
+            echo "<br>";
+            echo "eingetragene Allianz: " . $alianz;
+            echo "<br>";
+            echo "eingetragene Macht: " . $macht;
+            echo "<br>";
+            echo "eingetragenes Schiff 1: " . $schiff1;
+            echo "<br>";
+            echo "eingetragenes Schiff 2: " . $schiff2;
+            echo "<br>";
+            echo "eingetragenes Schiff 3: " . $schiff3;
+            echo "<br>";
+            echo "eingetragenes Schiff 4: " . $schiff4;
+            echo "<br>";
+            echo "eingetragenes Schiff 5: " . $schiff5;
+            echo "<br>";
+            echo "eingetragener Taktiker: " . $parker;
+            echo "<br>";
+            echo "eingetragener Taktiker: " . $perez;
 
 
 
 
-        $sql = "INSERT INTO TOW(Name, Alianz, Macht, Schiff1, Schiff2, Schiff3, Schiff4, Schiff5, Parker, Perez) values (:name, :alianz, :macht, :schiff1, :schiff2, :schiff3, :schiff4, :schiff5, :parker, :perez)";
-        $stmt = $dbh->prepare($sql);
-        $stmt->bindValue(':name', $name);
-        $stmt->bindValue(':alianz', $alianz);
-        $stmt->bindValue(':macht', $macht);
-        $stmt->bindValue(':schiff1', $schiff1);
-        $stmt->bindValue(':schiff2', $schiff2);
-        $stmt->bindValue(':schiff3', $schiff3);
-        $stmt->bindValue(':schiff4', $schiff4);
-        $stmt->bindValue(':schiff5', $schiff5);
-        $stmt->bindValue(':parker', $parker);
-        $stmt->bindValue(':perez', $perez);
+            $sql = "INSERT INTO TOW(Name, Alianz, Macht, Schiff1, Schiff2, Schiff3, Schiff4, Schiff5, Parker, Perez) values (:name, :alianz, :macht, :schiff1, :schiff2, :schiff3, :schiff4, :schiff5, :parker, :perez)";
+            $stmt = $dbh->prepare($sql);
+            $stmt->bindValue(':name', $name);
+            $stmt->bindValue(':alianz', $alianz);
+            $stmt->bindValue(':macht', $macht);
+            $stmt->bindValue(':schiff1', $schiff1);
+            $stmt->bindValue(':schiff2', $schiff2);
+            $stmt->bindValue(':schiff3', $schiff3);
+            $stmt->bindValue(':schiff4', $schiff4);
+            $stmt->bindValue(':schiff5', $schiff5);
+            $stmt->bindValue(':parker', $parker);
+            $stmt->bindValue(':perez', $perez);
 
-        $stmt->execute();
-    }
+            $stmt->execute();
+        }
 
-    require('connectBD.php');
+        require('connectBD.php');
 
-    $db_res = runSQL("Select Name, Alianz, Macht, Schiff1, Schiff2, Schiff3, Schiff4, Schiff5, Parker, Perez, Datum FROM TOW");
+        $db_res = runSQL("Select ID, Name, Alianz, Macht, Schiff1, Schiff2, Schiff3, Schiff4, Schiff5, Parker, Perez, Datum FROM TOW");
 
-
-    echo ('<table>');
-    while ($row = mysqli_fetch_array($db_res)) {
-        echo ('<tr>');
-        echo ('<td>' . $row['Name'] . '</td>');
-        echo ('<td>' . $row['Alianz'] . '</td>');
-        echo ('<td>' . $row['Macht'] . '</td>');
-        echo ('<td>' . $row['Schiff1'] . '</td>');
-        echo ('<td>' . $row['Schiff2'] . '</td>');
-        echo ('<td>' . $row['Schiff3'] . '</td>');
-        echo ('<td>' . $row['Schiff4'] . '</td>');
-        echo ('<td>' . $row['Schiff5'] . '</td>');
-        echo ('<td>' . $row['Parker'] . '</td>');
-        echo ('<td>' . $row['Perez'] . '</td>');
-        echo ('<td>' . $row['Datum'] . '</td>');
-
-
-        echo ('</tr>');
-    }
-    echo ('</table>');
+        echo "<table border='1' cellpadding='5'>
+    <tr>
+    <th>ID</th>
+    <th>Name</th>
+    <th>Allianz</th>
+    <th>Macht</th>
+    <th>1. Schiff</th>
+    <th>2. Schiff</th>
+    <th>3. Schiff</th>
+    <th>4. Schiff</th>
+    <th>5. Schiff</th>
+    <th>Parker?</th>
+    <th>Perez?</th>
+    <th>Datum</th>
+    <th>löschen</th>
+    </tr>";
+        echo "<form method='post'>";
 
 
-    ?>
+        while ($row = mysqli_fetch_array($db_res)) {
 
+            echo ('<td>' . $row['ID'] . '</td>');
+            echo ('<td>' . $row['Name'] . '</td>');
+            echo ('<td>' . $row['Alianz'] . '</td>');
+            echo ('<td>' . $row['Macht'] . '</td>');
+            echo ('<td>' . $row['Schiff1'] . '</td>');
+            echo ('<td>' . $row['Schiff2'] . '</td>');
+            echo ('<td>' . $row['Schiff3'] . '</td>');
+            echo ('<td>' . $row['Schiff4'] . '</td>');
+            echo ('<td>' . $row['Schiff5'] . '</td>');
+            echo ('<td>' . $row['Parker'] . '</td>');
+            echo ('<td>' . $row['Perez'] . '</td>');
+            echo ('<td>' . $row['Datum'] . '</td>');
+            echo "<td> <a href=delete.php?id=".$row['ID'].">Delete</a> </td>";
+            echo ('</tr>');
+        }
+        echo ('</table>');
+
+
+        ?>
+    </form>
+    </form>
 </body>
 
 </html>

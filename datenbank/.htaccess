@@ -1,4 +1,0 @@
-AuthType Basic
-AuthName "Du kommst hier net rein!"
-AuthUserFile /home/strato/http/power/rid/36/51/5913651/htdocs/datenbank/passwd/.htpasswd
-require valid-user
