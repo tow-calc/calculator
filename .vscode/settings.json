@@ -1,0 +1,17 @@
+{
+    "sqltools.connections": [
+        {
+            "database": "DB4173818",
+            "driver": "MySQL",
+            "mysqlOptions": {
+                "authProtocol": "default"
+            },
+            "name": "Datenbank",
+            "password": "Iwoiweis18+",
+            "port": 22,
+            "previewLimit": 50,
+            "server": "rdbms.strato.de",
+            "username": "U4173818"
+        }
+    ]
+}

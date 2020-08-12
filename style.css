@@ -101,3 +101,9 @@ td {
 border: 1px solid black;
 
 }
+
+#imageklein img{
+    width: 7%;
+    margin-top: 16px;
+    margin-bottom: 16px;
+}
