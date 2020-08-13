@@ -17,6 +17,10 @@
             <br>
 
             <form action="gregor.php" method="POST">
+                <label for="schiffName">Account</label>
+                <input name="schiffName" type="text" />
+                <br>
+                <br>
                 <label for="nahrung">Nahrung</label>
                 <input name="nahrung" type="text" />
                 <label for="holz">Holz</label>
@@ -42,6 +46,7 @@
                     <option value="Gewaltige Galeone"> Gewaltige Galeone </option>
                     <option value="Kriegsgaleone"> Kriegsgaleone </option>
                     <option value="Superfregatte"> Superfregatte </option>
+                    <option value="Linienschiff"> Linienschiff </option>
                 </select>
                 <label for="schiff2">Schiff 2</label>
                 <select name="schiff2">
@@ -53,6 +58,7 @@
                     <option value="Gewaltige Galeone"> Gewaltige Galeone </option>
                     <option value="Kriegsgaleone"> Kriegsgaleone </option>
                     <option value="Superfregatte"> Superfregatte </option>
+                    <option value="Linienschiff"> Linienschiff </option>
                 </select>
                 <label for="schiff3">Schiff 3</label>
                 <select name="schiff3">
@@ -64,6 +70,7 @@
                     <option value="Gewaltige Galeone"> Gewaltige Galeone </option>
                     <option value="Kriegsgaleone"> Kriegsgaleone </option>
                     <option value="Superfregatte"> Superfregatte </option>
+                    <option value="Linienschiff"> Linienschiff </option>
                 </select>
                 <label for="schiff4">Schiff 4</label>
                 <select name="schiff4">
@@ -75,6 +82,7 @@
                     <option value="Gewaltige Galeone"> Gewaltige Galeone </option>
                     <option value="Kriegsgaleone"> Kriegsgaleone </option>
                     <option value="Superfregatte"> Superfregatte </option>
+                    <option value="Linienschiff"> Linienschiff </option>
                 </select>
                 <label for="schiff5">Schiff 5</label>
                 <select name="schiff5">
@@ -86,6 +94,7 @@
                     <option value="Gewaltige Galeone"> Gewaltige Galeone </option>
                     <option value="Kriegsgaleone"> Kriegsgaleone </option>
                     <option value="Superfregatte"> Superfregatte </option>
+                    <option value="Linienschiff"> Linienschiff </option>
                 </select>
                 <br>
                 <label for="schiff6">Schiff 6</label>
@@ -98,6 +107,7 @@
                     <option value="Gewaltige Galeone"> Gewaltige Galeone </option>
                     <option value="Kriegsgaleone"> Kriegsgaleone </option>
                     <option value="Superfregatte"> Superfregatte </option>
+                    <option value="Linienschiff"> Linienschiff </option>
                 </select>
                 <label for="schiff7">Schiff 7</label>
                 <select name="schiff7">
@@ -109,6 +119,7 @@
                     <option value="Gewaltige Galeone"> Gewaltige Galeone </option>
                     <option value="Kriegsgaleone"> Kriegsgaleone </option>
                     <option value="Superfregatte"> Superfregatte </option>
+                    <option value="Linienschiff"> Linienschiff </option>
                 </select>
                 <label for="schiff8">Schiff 8</label>
                 <select name="schiff8">
@@ -120,6 +131,7 @@
                     <option value="Gewaltige Galeone"> Gewaltige Galeone </option>
                     <option value="Kriegsgaleone"> Kriegsgaleone </option>
                     <option value="Superfregatte"> Superfregatte </option>
+                    <option value="Linienschiff"> Linienschiff </option>
                 </select>
                 <label for="schiff9">Schiff 9</label>
                 <select name="schiff9">
@@ -131,6 +143,7 @@
                     <option value="Gewaltige Galeone"> Gewaltige Galeone </option>
                     <option value="Kriegsgaleone"> Kriegsgaleone </option>
                     <option value="Superfregatte"> Superfregatte </option>
+                    <option value="Linienschiff"> Linienschiff </option>
                 </select>
                 <label for="schiff10">Schiff 10</label>
                 <select name="schiff10">
@@ -142,6 +155,7 @@
                     <option value="Gewaltige Galeone"> Gewaltige Galeone </option>
                     <option value="Kriegsgaleone"> Kriegsgaleone </option>
                     <option value="Superfregatte"> Superfregatte </option>
+                    <option value="Linienschiff"> Linienschiff </option>
                 </select>
                 <br>
                 <br>
@@ -149,6 +163,10 @@
             </form>
 
             <form action="gregor.php" method="POST">
+                <label for="goldName">Account</label>
+                <input name="goldName" type="text" />
+                <br>
+                <br>
                 <label for="gold20">20 Gold</label>
                 <input name="gold20" type="text" />
                 <label for="gold100">100 Gold</label>
@@ -181,6 +199,10 @@
             </form>
 
             <form action="gregor.php" method="POST">
+                <label for="nahrungName">Account</label>
+                <input name="nahrungName" type="text" />
+                <br>
+                <br>
                 <label for="nahrung150">150 Nahrung</label>
                 <input name="nahrung150" type="text" />
                 <label for="nahrung600">600 Nahrung</label>
@@ -222,7 +244,7 @@
 
                 require('Include/db_connect.php');
 
-
+                $schiffName = $_POST['schiffName'];
                 $nahrung = $_POST['nahrung'];
                 $holz = $_POST['holz'];
                 $silber = $_POST['silber'];
@@ -240,20 +262,23 @@
                 $schiff9 = $_POST['schiff9'];
                 $schiff10 = $_POST['schiff10'];
 
-                echo "eingetragene Nahrung: " . $nahrung;
-                echo "<br>";
-                echo "eingetragenes Holz: " . $holz;
-                echo "<br>";
-                echo "eingetragenes Silber: " . $silber;
-                echo "<br>";
-                echo "eingetragene Spezial Nahrung: " . $spNahrung;
-                echo "<br>";
-                echo "eingetragenes Spezial Holz: " . $spHolz;
-                echo "<br>";
-                echo "eingetragenes Spezial Silber: " . $spSilber;
+#                echo "eingetragener Account: " . $schiffName;
+#                echo "<br>";
+#                echo "eingetragene Nahrung: " . $nahrung;
+#                echo "<br>";
+#                echo "eingetragenes Holz: " . $holz;
+#                echo "<br>";
+#                echo "eingetragenes Silber: " . $silber;
+#                echo "<br>";
+#                echo "eingetragene Spezial Nahrung: " . $spNahrung;
+#                echo "<br>";
+#                echo "eingetragenes Spezial Holz: " . $spHolz;
+#                echo "<br>";
+#                echo "eingetragenes Spezial Silber: " . $spSilber;
 
-                $sql = "INSERT INTO Gregor(Nahrung, Holz, Silber, spNahrung, spHolz, spSilber, Schiff1, Schiff2, Schiff3, Schiff4, Schiff5, Schiff6, Schiff7, Schiff8, Schiff9, Schiff10) values (:nahrung, :holz, :silber, :spNahrung, :spHolz, :spSilber, :schiff1, :schiff2, :schiff3, :schiff4, :schiff5, :schiff6, :schiff7, :schiff8, :schiff9, :schiff10)";
+                $sql = "INSERT INTO Gregor(Account, Nahrung, Holz, Silber, spNahrung, spHolz, spSilber, Schiff1, Schiff2, Schiff3, Schiff4, Schiff5, Schiff6, Schiff7, Schiff8, Schiff9, Schiff10) values (:schiffName, :nahrung, :holz, :silber, :spNahrung, :spHolz, :spSilber, :schiff1, :schiff2, :schiff3, :schiff4, :schiff5, :schiff6, :schiff7, :schiff8, :schiff9, :schiff10)";
                 $stmt = $dbh->prepare($sql);
+                $stmt->bindValue(':schiffName', $schiffName);
                 $stmt->bindValue(':nahrung', $nahrung);
                 $stmt->bindValue(':holz', $holz);
                 $stmt->bindValue(':silber', $silber);
@@ -275,11 +300,12 @@
 
             require('connectBD.php');
 
-            $db_res = runSQL("Select ID, Nahrung, Holz, Silber, spNahrung, spHolz, spSilber, Schiff1, Schiff2, Schiff3, Schiff4, Schiff5, Schiff6, Schiff7, Schiff8, Schiff9, Schiff10  FROM Gregor");
+            $db_res = runSQL("Select ID, Account, Nahrung, Holz, Silber, spNahrung, spHolz, spSilber, Schiff1, Schiff2, Schiff3, Schiff4, Schiff5, Schiff6, Schiff7, Schiff8, Schiff9, Schiff10  FROM Gregor");
 
             echo "<table border='1' cellpadding='5'>
             <tr>
             <th>ID</th>
+            <th>Account</th>            
             <th>Nahrung</th>
             <th>Holz</th>
             <th>Silber</th>
@@ -307,6 +333,7 @@
 
             while ($row = mysqli_fetch_array($db_res)) {
                 echo ('<td>' . $row['ID'] . '</td>');
+                echo ('<td>' . $row['Account'] . '</td>');
                 echo ('<td>' . $row['Nahrung'] . '</td>');
                 echo ('<td>' . $row['Holz'] . '</td>');
                 echo ('<td>' . $row['Silber'] . '</td>');
@@ -334,6 +361,7 @@
 
                 require('Include/db_connect.php');
 
+                $goldName = $_POST['goldName'];
                 $gold20 = $_POST['gold20'];
                 $gold100 = $_POST['gold100'];
                 $gold200 = $_POST['gold200'];
@@ -347,33 +375,36 @@
                 $gold10000 = $_POST['gold10000'];
                 $goldErgebnis = $gold20 * 20 + $gold100 * 100 + $gold200 * 200 + $gold500 * 500 + $gold1000 * 1000 + $gold2000 * 2000 + $gold3000 * 3000 + $gold3500 * 3500 + $gold4000 * 4000 + $gold5000 * 5000 + $gold10000 * 10000;
 
-                echo "eingetragenes 20x Gold: " . $gold20;
-                echo "<br>";
-                echo "eingetragenes 100x Gold: " . $gold100;
-                echo "<br>";
-                echo "eingetragenes 200x Gold: " . $gold200;
-                echo "<br>";
-                echo "eingetragenes 500x Gold: " . $gold500;
-                echo "<br>";
-                echo "eingetragenes 1000x Gold: " . $gold1000;
-                echo "<br>";
-                echo "eingetragenes 2000x Gold: " . $gold2000;
-                echo "<br>";
-                echo "eingetragenes 3000x Gold: " . $gold3000;
-                echo "<br>";
-                echo "eingetragenes 3500x Gold: " . $gold3500;
-                echo "<br>";
-                echo "eingetragenes 4000x Gold: " . $gold4000;
-                echo "<br>";
-                echo "eingetragenes 50000x Gold: " . $gold5000;
-                echo "<br>";
-                echo "eingetragenes 10000x Gold: " . $gold10000;
+#                echo "eingetragener Account: " . $goldName;
+#                echo "<br>";
+#                echo "eingetragenes 20x Gold: " . $gold20;
+#                echo "<br>";
+#                echo "eingetragenes 100x Gold: " . $gold100;
+#                echo "<br>";
+#                echo "eingetragenes 200x Gold: " . $gold200;
+#                echo "<br>";
+#                echo "eingetragenes 500x Gold: " . $gold500;
+#                echo "<br>";
+#                echo "eingetragenes 1000x Gold: " . $gold1000;
+#                echo "<br>";
+#                echo "eingetragenes 2000x Gold: " . $gold2000;
+#                echo "<br>";
+#                echo "eingetragenes 3000x Gold: " . $gold3000;
+#                echo "<br>";
+#                echo "eingetragenes 3500x Gold: " . $gold3500;
+#                echo "<br>";
+#                echo "eingetragenes 4000x Gold: " . $gold4000;
+#                echo "<br>";
+#                echo "eingetragenes 50000x Gold: " . $gold5000;
+#                echo "<br>";
+#                echo "eingetragenes 10000x Gold: " . $gold10000;
 
 
 
 
-                $sql = "INSERT INTO GregorGold(Gold20, Gold100, Gold200, Gold500, Gold1000, Gold2000, Gold3000, Gold3500, Gold4000, Gold5000, Gold10000, Ergebnis) values (:gold20, :gold100, :gold200, :gold500, :gold1000, :gold2000, :gold3000, :gold3500, :gold4000, :gold5000, :gold10000, :ergebnis)";
+                $sql = "INSERT INTO GregorGold(Account, Gold20, Gold100, Gold200, Gold500, Gold1000, Gold2000, Gold3000, Gold3500, Gold4000, Gold5000, Gold10000, Ergebnis) values (:goldName, :gold20, :gold100, :gold200, :gold500, :gold1000, :gold2000, :gold3000, :gold3500, :gold4000, :gold5000, :gold10000, :ergebnis)";
                 $stmt = $dbh->prepare($sql);
+                $stmt->bindValue(':goldName', $goldName);
                 $stmt->bindValue(':gold20', $gold20);
                 $stmt->bindValue(':gold100', $gold100);
                 $stmt->bindValue(':gold200', $gold200);
@@ -393,6 +424,7 @@
             <tr>
             <br>
             <th>ID</th>
+            <th>Account</th>
             <th>Gold 20</th>
             <th>Gold 100</th>
             <th>Gold 200</th>
@@ -407,13 +439,16 @@
             <th>Gold Gesamt</th>
             <th>löschen</th>
             <th>bearbeiten</th>
+
+
             </tr>";
             echo "<form method='post'>";
 
-            $db_res = runSQL("Select ID, Gold20, Gold100, Gold200, Gold500, Gold1000, Gold2000, Gold3000, Gold3500, Gold4000, Gold5000, Gold10000, Ergebnis  FROM GregorGold");
+            $db_res = runSQL("Select ID, Account, Gold20, Gold100, Gold200, Gold500, Gold1000, Gold2000, Gold3000, Gold3500, Gold4000, Gold5000, Gold10000, Ergebnis  FROM GregorGold");
 
             while ($row = mysqli_fetch_array($db_res)) {
                 echo ('<td>' . $row['ID'] . '</td>');
+                echo ('<td>' . $row['Account'] . '</td>');
                 echo ('<td>' . $row['Gold20'] . '</td>');
                 echo ('<td>' . $row['Gold100'] . '</td>');
                 echo ('<td>' . $row['Gold200'] . '</td>');
@@ -437,6 +472,7 @@
 
                 require('Include/db_connect.php');
 
+                $nahrungName = $_POST['nahrungName'];
                 $nahrung150 = $_POST['nahrung150'];
                 $nahrung600 = $_POST['nahrung600'];
                 $nahrung3k = $_POST['nahrung3k'];
@@ -452,30 +488,31 @@
                 $nahrungErgebnis = $nahrung150 * 150 + $nahrung600 * 600 + $nahrung3k * 3000 + $nahrung6k * 6000 + $nahrung12k * 12000 + $nahrung30k * 30000 + $nahrung60k * 60000 +
                     $nahrung120k * 120000 + $nahrung300k * 300000 + $nahrung600k * 600000 + $nahrung12m * 1200000 + $nahrung6m * 6000000;
 
-                echo "eingetragene 150x Nahrung: " . $nahrung150;
-                echo "<br>";
-                echo "eingetragene 600x Nahrung: " . $nahrung600;
-                echo "<br>";
-                echo "eingetragene 3kx Nahrung: " . $nahrung3k;
-                echo "<br>";
-                echo "eingetragene 6kx Nahrung: " . $nahrung6k;
-                echo "<br>";
-                echo "eingetragene 12kx Nahrung: " . $nahrung12k;
-                echo "<br>";
-                echo "eingetragene 30kx Nahrung: " . $nahrung30k;
-                echo "<br>";
-                echo "eingetragene 60kx Nahrung: " . $nahrung60k;
-                echo "<br>";
-                echo "eingetragene 120kx Nahrung: " . $nahrung120k;
-                echo "<br>";
-                echo "eingetragene 300kx Nahrung: " . $nahrung300k;
-                echo "<br>";
-                echo "eingetragene 12mx Nahrung: " . $nahrung12m;
-                echo "<br>";
-                echo "eingetragene 6mx Nahrung: " . $nahrung6m;
+ #               echo "eingetragener Account: " . $nahrungName;
+ #               echo "<br>";
+ #               echo "eingetragene 600x Nahrung: " . $nahrung600;
+ #               echo "<br>";
+ #               echo "eingetragene 3kx Nahrung: " . $nahrung3k;
+ #               echo "<br>";
+ #               echo "eingetragene 6kx Nahrung: " . $nahrung6k;
+ #               echo "<br>";
+ #               echo "eingetragene 12kx Nahrung: " . $nahrung12k;
+ #               echo "<br>";
+ #               echo "eingetragene 30kx Nahrung: " . $nahrung30k;
+ #               echo "<br>";
+ #               echo "eingetragene 60kx Nahrung: " . $nahrung60k;
+ #               echo "<br>";
+ #               echo "eingetragene 120kx Nahrung: " . $nahrung120k;
+ #               echo "<br>";
+ #               echo "eingetragene 300kx Nahrung: " . $nahrung300k;
+ #               echo "<br>";
+ #               echo "eingetragene 12mx Nahrung: " . $nahrung12m;
+ #               echo "<br>";
+ #               echo "eingetragene 6mx Nahrung: " . $nahrung6m;
 
-                $sql = "INSERT INTO GregorNahrung(Nahrung150, Nahrung600, Nahrung3k, Nahrung6k, Nahrung12k, Nahrung30k, Nahrung60k, Nahrung120k, Nahrung300k, Nahrung600k, Nahrung12m, Nahrung6m, Ergebnis) values (:nahrung150, :nahrung600, :nahrung3k, :nahrung6k, :nahrung12k, :nahrung30k, :nahrung60k, :nahrung120k, :nahrung300k, :nahrung600k, :nahrung12m, :nahrung6m, :nahrungErgebnis)";
+                $sql = "INSERT INTO GregorNahrung(Account, Nahrung150, Nahrung600, Nahrung3k, Nahrung6k, Nahrung12k, Nahrung30k, Nahrung60k, Nahrung120k, Nahrung300k, Nahrung600k, Nahrung12m, Nahrung6m, Ergebnis) values (:nahrungName, :nahrung150, :nahrung600, :nahrung3k, :nahrung6k, :nahrung12k, :nahrung30k, :nahrung60k, :nahrung120k, :nahrung300k, :nahrung600k, :nahrung12m, :nahrung6m, :nahrungErgebnis)";
                 $stmt = $dbh->prepare($sql);
+                $stmt->bindValue(':nahrungName', $nahrungName);
                 $stmt->bindValue(':nahrung150', $nahrung150);
                 $stmt->bindValue(':nahrung600', $nahrung600);
                 $stmt->bindValue(':nahrung3k', $nahrung3k);
@@ -493,11 +530,13 @@
             }
 
 
-            $db_res = runSQL("Select ID, Nahrung150, Nahrung600, Nahrung3k, Nahrung6k, Nahrung12k, Nahrung30k, Nahrung60k, Nahrung120k, Nahrung300k, Nahrung600k, Nahrung12m, Nahrung6m, Ergebnis  FROM GregorNahrung");
+            $db_res = runSQL("Select ID, Account, Nahrung150, Nahrung600, Nahrung3k, Nahrung6k, Nahrung12k, Nahrung30k, Nahrung60k, Nahrung120k, Nahrung300k, Nahrung600k, Nahrung12m, Nahrung6m, Ergebnis  FROM GregorNahrung");
 
             echo "<table border='1' cellpadding='5'>
             <tr>
+            <br>
             <th>ID</th>
+            <th>Account</th>
             <th>Nahrung150</th>
             <th>Nahrung600</th>
             <th>Nahrung3k</th>
@@ -513,11 +552,14 @@
             <th>Nahrung Gesamt</th>
             <th>löschen</th>
             <th>bearbeiten</th>
+
+
             </tr>";
             echo "<form method='post'>";
 
             while ($row = mysqli_fetch_array($db_res)) {
                 echo ('<td>' . $row['ID'] . '</td>');
+                echo ('<td>' . $row['Account'] . '</td>');
                 echo ('<td>' . $row['Nahrung150'] . '</td>');
                 echo ('<td>' . $row['Nahrung600'] . '</td>');
                 echo ('<td>' . $row['Nahrung3k'] . '</td>');

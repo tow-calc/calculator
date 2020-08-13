@@ -21,10 +21,10 @@
             <br>
 
             <form action="" method="POST">
-                <input name="id" type="text" placeholder="Gib die ID ein" />
+                <input name="id" type="text" placeholder="Gib die ID ein...">
                 <input type="submit" name="search" value="search Data">
             </form>
-
+            
             <?php
             $con = mysqli_connect('rdbms.strato.de', 'U4173818', 'Iwoiweis18+', 'DB4173818');
 
@@ -41,6 +41,10 @@
 
                     <form action="" method="POST">
                         <input type="hidden" name="id" value="<?php echo $row['ID']  ?>" />
+                        <label for="nahrungName">Account</label>
+                        <input name="nahrungName" type="text" value="<?php echo $row['Account']  ?>" />
+                        <br>
+                        <br>
                         <label for="nahrung150">150 Nahrung</label>
                         <input name="nahrung150" type="text" value="<?php echo $row['Nahrung150']  ?>" />
                         <label for="nahrung600">600 Nahrung</label>
@@ -87,6 +91,7 @@
 if (isset($_POST['updateNahrung'])) {
 
     $id = $_POST['id'];
+    $nahrungName = $_POST['nahrungName'];
     $nahrung150 = $_POST['nahrung150'];
     $nahrung600 = $_POST['nahrung600'];
     $nahrung3k = $_POST['nahrung3k'];
@@ -103,7 +108,7 @@ if (isset($_POST['updateNahrung'])) {
         $nahrung120k * 120000 + $nahrung300k * 300000 + $nahrung600k * 600000 + $nahrung12m * 1200000 + $nahrung6m * 6000000;
 
 
-    $sql = "UPDATE `GregorNahrung` SET `Nahrung150` = '" . $nahrung150 . "',`Nahrung600` = '" . $nahrung600 . "', `Nahrung3k` = '" . $nahrung3k . "', `Nahrung6k` = '" . $nahrung6k . "', `Nahrung12k` = '" . $nahrung12k . "', `Nahrung30k` = '" . $nahrung30k . "', `Nahrung60k` = '" . $nahrung60k . "', `Nahrung120k` = '" . $nahrung120k . "', `Nahrung300k` = '" . $nahrung300k . "', `Nahrung600k` = '" . $nahrung600k . "', `Nahrung12m` = '" . $nahrung12m . "', `Nahrung6m` = '" . $nahrung6m . "', `Ergebnis` = '" . $nahrungErgebnis . "' WHERE `ID` ='$id'";
+    $sql = "UPDATE `GregorNahrung` SET `Account` = '" . $nahrungName . "',`Nahrung150` = '" . $nahrung150 . "',`Nahrung600` = '" . $nahrung600 . "', `Nahrung3k` = '" . $nahrung3k . "', `Nahrung6k` = '" . $nahrung6k . "', `Nahrung12k` = '" . $nahrung12k . "', `Nahrung30k` = '" . $nahrung30k . "', `Nahrung60k` = '" . $nahrung60k . "', `Nahrung120k` = '" . $nahrung120k . "', `Nahrung300k` = '" . $nahrung300k . "', `Nahrung600k` = '" . $nahrung600k . "', `Nahrung12m` = '" . $nahrung12m . "', `Nahrung6m` = '" . $nahrung6m . "', `Ergebnis` = '" . $nahrungErgebnis . "' WHERE `ID` ='$id'";
 
     $query_run =  mysqli_query($con, $sql);
 
