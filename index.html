@@ -29,6 +29,7 @@
             <a href="#oiken">Oik Event</a>
             <a href="#monster">Monster Event</a>
             <a href="#forschen">Forschungs Event</a>
+            <a href="#handelsstadt">Handelsstadt Suche</a>
             <!--           <a href="daten/passwort.html">Datenbank</a>-->
             <!--      <a href="datenbank/insert.php">Datenbank</a> -->
             <a href="Disclaimer.html">Disclaimer/Impressum</a>
@@ -262,6 +263,74 @@
             <script src="js/BerechnungForschEvent.js"></script>
             <br>
             <br>
+
+
+            <section id="handelsstadt"></section>
+            <h2 style="color: red;">Handelsstädte und Waren Suche</h2>
+            <p>Einfache Suche nach den Handelsstädten oder Waren.</p>
+
+            <main>
+                <form id="myForm4">
+       
+                <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Objekte oder Städte eingeben"
+                    title="Objekt oder Hafenstadt">
+        
+                <ul id="myUL">
+                    <li><a href="#">OTTENBORG - Salz, Parfüm, Keramik, Eiche, Pfeffer, Wolle, Honigbiene, Pfefferminze</a></li>
+                    <li><a href="#">SAINT ADELAIDE - Salz, Paprika, Wein, Kaffee, Pfeffer, Wolle, Vanille, Pfefferminze</a></li>
+                    <li><a href="#">OLDCASTLE - Salz, Parfüm, Mandel, Bild, Pfeffer, Wolle, Ingwer, Pfefferminze</a></li>
+                    <li><a href="#">POTTERDAM - Salz, Parfüm, Gewürznelke, Zimt, Pfeffer, Wolle, Ingwer, Garn</a></li>
+                    <li><a href="#">GROTTE DER WINDE - Marmor, Glas, Samt, Bild, Kaffee, Statue, Tee, Kakao</a></li>
+                    <li><a href="#">VILLE DE BISCAY - Salz, Parfüm, Elfenbein, Kupfer, Pfeffer, Wolle, Ingwer, Pfefferminze</a></li>
+                    <li><a href="#">AGROPOLIS - Salz, Parfüm, Kupfer, Eisenerz, Pfeffer, Wolle, Honigbiene, Pfefferminze</a></li>
+                    <li><a href="#">ADAMSBOROUGH - Kakao, Parfüm, Perle, Rubin, Pfeffer, Kamel, Ingwer, Teppich</a></li>
+                    <li><a href="#">SAN RAPHAEL - Salz, Gewürznelke, Seide, Kamel, Pfeffer, Wolle, Honigbiene, Pfefferminze</a></li>
+                    <li><a href="#">STALLERVIK - Tee, Tulpe, Garn, Pferd, Kaffee, Zimt, Zuckerrohr, Vanille</a></li>
+                    <li><a href="#">PORTO DE SOTO - Tee, Kakao, Koralle, Kartoffel, Kaffee, Samt, Zuckerrohr, Vanille</a></li>
+                    <li><a href="#">HOUNDSMOUTH - Tee, Mandel, Kupfer, Kartoffel, Elfenbein, Samt, Zuckerrohr, Kaktus</a></li>
+                    <li><a href="#">DORDEFOORT - Pfeffer, Wolle, Wein, Zimt, Salz, Parfüm, Kaktus, Rubin</a></li>
+                    <li><a href="#">LOS PESADILLA - Perle, Olive, Keramik, Paprika, Pferd, Statue, Eisenerz, Marmor</a></li>
+                    <li><a href="#">LUTETIA - Elfenbein, Pfefferminze, Bild, Rubin, Olive, Tulpe, Kakao, Kaktus</a></li>
+                    <li><a href="#">LOMBARDO - Zuckerrohr, Wolle, Koralle, Eiche, Tulpe, Teppich, Gewürznelke, Salz</a></li>
+                    <li><a href="#">COTTER`s BAY - Tee, Mandel, Koralle, Kartoffel, Kaffee, Samt, Zuckerrohr, Vanille</a></li>
+                    <li><a href="#">MADIZ - Ingwer, Pfefferminze, Gewürznelke, Seide, Olive, Wein, Teppich, Zimt</a></li>
+                    <li><a href="#">TRODHOLM - Vanille, Eisenerz, Gummi, Seide, Mandel, Glas, Paprika, Eiche</a></li>
+                    <li><a href="#">NEW MORCHESTER - Kaffee, Perle, Gummi, Kaktus, Mandel, Garn, Paprika, Eiche</a></li>
+                    <li><a href="#">MORCHESTER - Zuckerrohr, Vanille, Bild, Marmor, Kamel, Kartoffel, Kupfer, Rubin</a></li>
+                    <li><a href="#">HARLENHOVEN - Gewürznelke, Vanille, Zimt, Marmor, Salz, Kartoffel, Seide, Rubin</a></li>
+                    <li><a href="#">ISLA DE ROSAS - Olive, Glas, Samt, Bild, Pferd, Elfenbein, Pfefferminze, Koralle</a></li>
+                    <li><a href="#">SUR SEINE - Kaffe, Wein, Gummi, Kupfer, Mandel, Koralle, Paprika, Eiche</a></li>
+                    <li><a href="#">CITTA DI PASSERI - Parfüm, Perle, Gummi, Kupfer, Mandel, Garn, Paprika, Eiche</a></li>
+                    <li><a href="#">HARBOURTOWN - Zuckerrohr, Vanille, Pferd, Marmor, Eisenerz, Kartoffel, Glas, Rubin</a></li>
+                    <li><a href="#">QUADALQUIVIR - Kamel, Perle, Gummi, Zimt, Mandel, Koralle, Tee, Eiche</a></li>
+                </ul>
+            </form>
+        </main>
+        </div>
+        
+            <script>
+        
+                function myFunction() {
+                    var input, filter, ul, li, a, i, txtValue;
+                    input = document.getElementById("myInput");
+                    filter = input.value.toUpperCase();
+                    ul = document.getElementById("myUL");
+                    li = ul.getElementsByTagName("li");
+                    for (i = 0; i < li.length; i++) {
+                        a = li[i].getElementsByTagName("a")[0];
+                        txtValue = a.textContent || a.innerText;
+                        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                            li[i].style.display = "";
+                        } else {
+                            li[i].style.display = "none";
+                        }
+                    }
+                }
+            </script>
+        
+<br>
+<br>
+
             <!--        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
                 <p>Captain, alles hier ist und bleibt kostenlos! Falls du am Monatsende nen Euro übrig haben solltest, würde ich davon die Serverkosten bezahlen :-)</p>
                 <input type="hidden" name="cmd" value="_s-xclick" />
@@ -306,7 +375,7 @@
         </div>
         <div id="footer">
             <br>
-            copyright 2020 by Gregor Knapp // 1.126 Fehler beseitigt, Zusätze eingefügt
+            copyright 2020 by Gregor Knapp // 1.13 Hafenstadt und Waren Suche hinzugefügt
         </div>
         <script src="cookie/load.js"></script>
 </body>
